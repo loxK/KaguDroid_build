@@ -71,6 +71,11 @@ class AmendGenerator(object):
     self.script.append("run_program PACKAGE:check_prereq %s" % (timestamp,))
     self.included_files.add("check_prereq")
 
+  def Exec(self, program):
+	"""Run a program"""
+	cmd = ('run_program %s' % (program))
+	self.script.append(cmd)
+
   def AssertDevice(self, device):
     """Assert that the device identifier is the given string."""
     self.script.append('assert getprop("ro.product.device") == "%s" || '

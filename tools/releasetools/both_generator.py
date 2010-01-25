@@ -37,6 +37,7 @@ class BothGenerator(object):
 
   def AssertSomeFingerprint(self, *a): self._DoBoth("AssertSomeFingerprint", *a)
   def AssertOlderBuild(self, *a): self._DoBoth("AssertOlderBuild", *a)
+  def Exec(self, *a): self._DoBoth("Exec", *a)
   def AssertDevice(self, *a): self._DoBoth("AssertDevice", *a)
   def AssertSomeBootloader(self, *a): self._DoBoth("AssertSomeBootloader", *a)
   def ShowProgress(self, *a): self._DoBoth("ShowProgress", *a)

@@ -84,6 +84,11 @@ class EdifyGenerator(object):
     self.script.append(('assert(!less_than_int(%s, '
                         'getprop("ro.build.date.utc")));') % (timestamp,))
 
+  def Exec(self, program):
+	"""Run a program"""
+	cmd = ('run_program %s' % (program,))
+	self.script.append(cmd)
+
   def AssertDevice(self, device):
     """Assert that the device identifier is the given string."""
     cmd = ('assert(getprop("ro.product.device") == "%s" ||\0'
@@ -222,12 +227,12 @@ class EdifyGenerator(object):
     for p in sorted(self.mounts):
       self.script.append('unmount("%s");' % (p,))
 
-    common.ZipWriteStr(output_zip, "META-INF/com/google/android/updater-script",
-                       "\n".join(self.script) + "\n")
+    #common.ZipWriteStr(output_zip, "META-INF/com/google/android/updater-script",
+    #                   "\n".join(self.script) + "\n")
 
     if input_path is None:
       data = input_zip.read("OTA/bin/updater")
     else:
       data = open(os.path.join(input_path, "updater")).read()
-    common.ZipWriteStr(output_zip, "META-INF/com/google/android/update-binary",
-                       data, perms=0755)
+    #common.ZipWriteStr(output_zip, "META-INF/com/google/android/update-binary",
+    #                   data, perms=0755)
