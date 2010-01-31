@@ -437,7 +437,7 @@ case "$1" in
         backup_file /system/app/GoogleSettingsProvider.apk
         backup_file /system/etc/permissions/com.google.android.gtalkservice.xml
         backup_file /system/etc/permissions/com.google.android.maps.xml
-        backup_file /system/framework/com.google.android.datamessaging.xml
+        backup_file /system/etc/permissions/com.google.android.datamessaging.xml
         backup_file /system/framework/com.google.android.gtalkservice.jar
         backup_file /system/framework/com.google.android.maps.jar
         backup_file /system/lib/libgtalk_jni.so
@@ -479,7 +479,7 @@ case "$1" in
         restore_file /system/etc/permissions/com.google.android.maps.xml
         restore_file /system/framework/com.google.android.gtalkservice.jar
         restore_file /system/framework/com.google.android.maps.jar
-        restore_file /system/framework/com.google.android.datamessaging.xml
+        restore_file /system/etc/permissions/com.google.android.datamessaging.xml
         restore_file /system/lib/libgtalk_jni.so
         restore_file /system/lib/libspeech.so
         ;;
